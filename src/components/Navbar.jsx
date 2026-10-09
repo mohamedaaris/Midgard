@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
 
-// Résumé hosted on Google Drive
-export const RESUME_URL = 'https://drive.google.com/file/d/1Cpm3t17IROh065koZku0HHdnCyZEJo5K/view?usp=sharing'
+// Links
 export const GITHUB_URL = 'https://github.com/mohamedaaris'
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/mohamedaaris/'
 
@@ -12,8 +11,6 @@ const navItems = [
   { id: 'about', label: 'About' },
   { id: 'journey', label: 'Journey' },
   { id: 'skills', label: 'Skills' },
-  { id: 'research', label: 'Research' },
-  { id: 'credentials', label: 'Certificates' },
   { id: 'moments', label: 'Moments' },
   { id: 'contact', label: 'Contact' },
 ]
@@ -55,7 +52,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        <span className="nav-logo" onClick={() => go('home')}>PA<em>.</em></span>
+        <span className="nav-logo" onClick={() => go('home')}>Midgard<em>.</em></span>
 
         <ul className="nav-links">
           {navItems.map(n => (
@@ -70,7 +67,7 @@ export default function Navbar() {
         <div className="nav-cta">
           <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a className="resume-pill" href={RESUME_URL} target="_blank" rel="noopener noreferrer">Résumé</a>
+          <a className="resume-pill" href="#contact">Build With Us</a>
         </div>
 
         <button className="mobile-btn" onClick={() => setOpen(!open)} aria-label="Toggle menu">

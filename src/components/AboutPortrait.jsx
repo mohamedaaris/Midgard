@@ -36,16 +36,19 @@ function BioBlock() {
     <div ref={ref} className="cream-bio">
       <FadeCol progress={scrollYProgress} range={[0, 0.45]}>
         <p>
-          Currently pursuing my B.E. in Computer Science and Engineering at Rajalakshmi Engineering College, graduating in 2028 — a web and
-          full-stack developer with hands-on experience across <b>front-end and back-end
-          technologies.</b> I build web apps, realtime systems and interfaces that feel right.
+          Midgard began with a single project: <b>MiraiSync.</b> What started as an effort to build
+          a real-time collaborative streaming platform became the first step in a much bigger journey —
+          turning ideas into <b>working technology.</b> Encouragement and guidance from mentors and senior
+          peers pushed me to think beyond individual applications and look at technology from a broader
+          engineering perspective.
         </p>
       </FadeCol>
       <FadeCol progress={scrollYProgress} range={[0.4, 0.9]}>
         <p>
-          Passionate about crafting visually stunning, highly functional digital experiences
-          that push the boundaries of web technology — from Flask backends and Socket.IO rooms
-           to a published graph-theory paper. <a href="#contact">Contact me →</a>
+          Step by step, that curiosity grew into projects spanning AI agents, research automation,
+          renewable-energy intelligence, connectivity, scientific computing, real-time systems and
+          cybersecurity — learning continuously, building purposefully, and turning ambitious ideas
+          into systems that work. <a href="#contact">Build with us →</a>
         </p>
       </FadeCol>
     </div>
@@ -58,7 +61,7 @@ export default function AboutPortrait() {
 
   return (
     <section className="cream" ref={ref}>
-      <span className="cream-giant" aria-hidden>ABOUT</span>
+      <span className="cream-giant" aria-hidden>STORY</span>
       <div className="cream-inner">
         <motion.div
           className="cream-photo"
@@ -66,14 +69,14 @@ export default function AboutPortrait() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <img src="/assets/aaris.jpeg" alt="P Mohamed Aaris" />
+          <img src="/assets/aaris.jpeg" alt="Mohamed Aaris P, Founder of Midgard" />
           <svg className="spin-badge" viewBox="0 0 120 120" aria-hidden>
             <defs>
               <path id="circ" d="M 60,60 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0" />
             </defs>
             <circle cx="60" cy="60" r="58" fill="#0a0a0a" />
             <text>
-              <textPath href="#circ" textLength="272" lengthAdjust="spacingAndGlyphs">READ MY STORY • AARIS • CHENNAI •</textPath>
+              <textPath href="#circ" textLength="272" lengthAdjust="spacingAndGlyphs">MIDGARD • OUR STORY • CHENNAI •</textPath>
             </text>
             <text x="60" y="68" textAnchor="middle" className="badge-star">✦</text>
           </svg>
@@ -82,15 +85,15 @@ export default function AboutPortrait() {
         <div>
           <RevealWords
             className="cream-quote"
-            text="Engineering is how a product works. Design is how it feels. I care about both, and I finish what I start."
-            accents={{ both: '#c8ff2e', start: '#c8ff2e' }}
+            text="From the first build to a bigger vision. Midgard began with one working product — and grew into a way of solving problems."
+            accents={{ bigger: '#c8ff2e', vision: '#c8ff2e' }}
           />
-          <p className="cream-byline">— P MOHAMED AARIS, FULL-STACK DEVELOPER</p>
+          <p className="cream-byline">— MOHAMED AARIS P, FOUNDER, MIDGARD</p>
           <BioBlock />
           <div className="cream-facts">
-            <div><span>Studying</span><b>CSE, Rajalakshmi Engineering College '28</b></div>
-            <div><span>Involved in</span><b>ERPNext internship · SIH · Research</b></div>
-            <div><span>Based in</span><b>Chennai, India</b></div>
+            <div><span>Roots</span><b>Started with MiraiSync — a real-time streaming build</b></div>
+            <div><span>Today</span><b>AI · Software · Research · Automation</b></div>
+            <div><span>Vision</span><b>An engineering-driven technology company</b></div>
           </div>
         </div>
       </div>

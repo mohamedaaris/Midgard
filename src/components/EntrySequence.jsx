@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const bootSequence = [
   '> Initializing portfolio environment...',
-  '> Loading projects, skills & credentials... [OK]',
+  '> Loading projects, skills & systems... [OK]',
   '> Verifying contact channel... [OK]',
   '> Ready ✓',
 ]
@@ -96,7 +96,7 @@ export default function EntrySequence({ onComplete }) {
           fontFamily: "'Share Tech Mono', monospace", color: '#8892b0',
           fontSize: '0.7rem', letterSpacing: '3px', marginTop: '0.4rem', textAlign: 'center',
         }}>
-          FULL STACK DEVELOPER
+          MIDGARD · ENGINEERING INTELLIGENT SYSTEMS
         </div>
       </div>
 

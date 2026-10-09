@@ -4,6 +4,42 @@ import { createPortal } from 'react-dom'
 
 const projects = [
   {
+    title: 'SolarGrid AI',
+    tagline: 'Intelligent rooftop solar integration for DISCOMs',
+    description: 'AI-assisted grid intelligence combining machine learning, physics-based power-flow simulation, GIS risk mapping and 3D digital twins — classifying proposed rooftop-solar connections as Safe, Caution or Constrained before approval, with a traceable citizen–DISCOM–vendor workflow.',
+    stack: ['Python', 'scikit-learn', 'pandapower'],
+    cat: 'Energy Intelligence',
+    status: 'Live',
+    url: 'https://sih26-1-urz4.onrender.com/',
+    shot: '/assets/solargrid%20panel%20placement.png',
+    glow: 'rgba(200,255,46,0.16)',
+    media: [
+      { src: '/assets/solargrid%20panel%20placement.png', caption: '3D panel placement' },
+      { src: '/assets/solargrid%20citizen%20portal%20application%20page.png', caption: 'Citizen application portal' },
+      { src: '/assets/solargrid%20incentive%20page%20in%20citizen%20page.png', caption: 'Incentive breakdown' },
+      { src: '/assets/solargrid%20vendor%20listing%20in%20citizen%20portal.png', caption: 'Verified vendors' },
+      { src: '/assets/solargrid%20vendors%20report%20to%20the%20discom%20in%20vendor%20portal.png', caption: 'Vendor report to DISCOM' },
+      { src: '/assets/Citizen%20application%20validating%20page%20in%20discom%20portal.png', caption: 'DISCOM validation view' },
+    ],
+  },
+  {
+    title: 'OceanEmbed',
+    tagline: 'AI-powered subsurface ocean intelligence',
+    description: 'Reconstructs subsurface ocean temperature from seven daily surface variables — depth-resolved views of the North Indian Ocean to 1,000 metres, with D26 and TCHP thermal indicators along cyclone paths.',
+    stack: ['Python', 'CNN', '3D Viz'],
+    cat: 'Ocean Intelligence',
+    status: 'In development',
+    url: null,
+    shot: '/assets/OceanEmbed.jpeg',
+    glow: 'rgba(77,216,255,0.16)',
+    note: 'Currently in development — demo on request.',
+    media: [
+      { src: '/assets/OceanEmbed.jpeg', caption: 'Subsurface field' },
+      { src: '/assets/OceanEmbed%202.jpeg', caption: 'Depth-resolved view' },
+      { src: '/assets/OceanEmbed%203.jpeg', caption: 'Thermal analysis' },
+    ],
+  },
+  {
     title: 'MiraiSync',
     tagline: 'Realtime collaborative watch-party platform',
     description: 'Synchronized video playback across locations with realtime chat via WebSockets, room creation and multi-source support with latency handling.',

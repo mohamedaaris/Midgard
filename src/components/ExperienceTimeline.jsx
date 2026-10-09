@@ -2,17 +2,11 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 
 const miles = [
-  { n: '01', cat: 'HTML · CSS', flap: 'FIRST', title: 'First websites', body: 'Static pages and CSS experiments — where the obsession with layout started.', img: '/assets/miraisync1.jpg' },
-  { n: '02', cat: 'Python · DSA', flap: 'LEARN', title: 'Python and problem solving', body: 'Scripting, automation and daily DSA practice that still pays off in every build.', img: '/assets/python.jpg' },
-  { n: '03', cat: 'SIH 2025', flap: 'TEAM', title: 'Hackathon round', body: 'Smart India Hackathon internal round. Learned scoping, teamwork and demo-driven shipping.', img: '/assets/sih%201.jpg' },
-  { n: '04', cat: 'ERPNext · Frappe', flap: 'WORK', title: 'Internship at Tekbee', body: 'CRM lead tracker plus a prompt-based AI chatbot performing real ERP tasks.', img: '/assets/tekbee.png' },
-  { n: '05', cat: 'Graph Theory', flap: 'MEET', title: 'ICGTA conference', body: 'International Conference on Graph Theory and Its Applications (ICGTA-2025) at Amrita — current trends and open questions in the field.', img: '/assets/ICGTA%20conference%20cochin.jpeg' },
-  { n: '06', cat: 'Elsevier · Q1', flap: 'PROOF', title: 'Published researcher', body: 'Average distance in cyclic bipartite graphs — Ain Shams Engineering Journal, IF 6.2.', img: '/assets/research.png' },
-  { n: '07', cat: 'ISRO · SHAR', flap: 'SPACE', title: 'ISRO educational visit', body: 'Launch-pad fuel systems, propellant handling and safety protocols at SDSC SHAR with Scientist E Mr. Vijayakumar.', img: '/assets/ISRO.jpeg' },
-  { n: '08', cat: 'ServiceNow', flap: 'ADMIN', title: 'ServiceNow virtual internship', body: 'SmartBridge × ServiceNow University × AICTE program — fundamentals, Agentic AI, Administration, Flows, ATF, Reports and CSA prep.', img: '/assets/servicenow.jpg' },
-  { n: '09', cat: 'IBM SkillsBuild', flap: 'GENAI', title: 'IBM SkillsBuild internship', body: 'Edunet Foundation program — watsonx AI Studio, Orchestrate, Granite models and BOB. Built SmartDesk AI, a natural-language desktop assistant.', img: '/assets/ibm.png' },
-  { n: '10', cat: 'React · AI', flap: 'SHIP', title: 'Realtime and AI products', body: 'ResuMatch AI, FlowLink, research agents — live, demoable, used.', img: '/assets/resumatch1.jpeg' },
-  { n: '11', cat: 'ICODMATH 2026', flap: 'STAGE', title: 'Two papers on stage', body: 'Presented “Number of 3-step Pairs in Fractal Cubic Network” and “Average Distance in {3,5}-Regular Cyclic Bipartite Graphs” at ICODMATH2026, REC.', img: '/assets/ICODMATH.jpg' },
+  { n: '01', cat: 'The First Build', flap: 'BUILD', title: 'MiraiSync', body: 'The first project that turned an interest in technology into a working product — a real-time collaborative streaming platform.', img: '/assets/miraisync1.jpg' },
+  { n: '02', cat: 'Guidance & Growth', flap: 'GROWTH', title: 'Mentors and senior peers', body: 'Feedback, guidance and new ideas that encouraged thinking bigger — beyond individual applications.', img: '/assets/mentor%20and%20peers.jpg' },
+  { n: '03', cat: 'Expanding Possibilities', flap: 'BEYOND', title: 'AI, research, energy, security', body: 'Each new project — agents, research automation, SolarGrid AI, connectivity, scientific computing — expanded what was possible.', img: '/assets/research.png' },
+  { n: '04', cat: 'Learning Beyond Projects', flap: 'LEARN', title: 'Hackathons, workshops, research', body: 'Applying new knowledge, testing ideas, and learning to identify meaningful problems and design complete systems.', img: '/assets/sih%201.jpg' },
+  { n: '05', cat: 'The Midgard Vision', flap: 'VISION', title: 'From projects to a technology company', body: 'Bringing it all together — custom solutions for organizations, plus original products that make complex technology useful and impactful.', img: '/assets/sih.jpg' },
 ]
 
 function SplitFlap({ text }) {
@@ -62,16 +56,16 @@ export default function ExperienceTimeline() {
     <section className="section" id="journey" ref={ref}>
       <div className="flip-grid">
         <div>
-          <p className="kicker">Journey</p>
+          <p className="kicker">Our story</p>
           <motion.h2
             className="h-giant"
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.75 }}
           >
-            How I got<br /><span className="it">here</span>
+            From the first build<br />to a <span className="it">bigger vision</span>
           </motion.h2>
-          <p className="section-desc">From static pages to realtime platforms.</p>
+          <p className="section-desc">How one working product became Midgard.</p>
           <div style={{ marginTop: '1.8rem' }}>
             <SplitFlap text={m.flap} />
           </div>

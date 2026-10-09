@@ -2,17 +2,17 @@ import { motion, useInView } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 
 const groups = [
-  { h: 'Languages', items: ['Python', 'Java', 'JavaScript', 'HTML', 'CSS', 'SQL'], used: 'Used in ERPNext, research tooling' },
+  { h: 'Languages', items: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C', 'Kotlin'], used: 'Used across Midgard builds' },
   { h: 'Frontend', items: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion'], used: 'Used in MiraiSync, FlowLink' },
-  { h: 'Backend / Data', items: ['Flask', 'Node.js', 'REST APIs', 'MySQL', 'Supabase'], used: 'Used in ResuMatch, MiraiSync' },
+  { h: 'Backend / Data', items: ['Flask', 'FastAPI', 'Node.js', 'REST APIs', 'PostgreSQL', 'Supabase'], used: 'Used in ResuMatch, SolarGrid AI' },
   { h: 'Realtime', items: ['Socket.IO', 'WebSocket', 'WebRTC'], used: 'Used in MiraiSync, FlowLink' },
-  { h: 'AI', items: ['SBERT', 'TF-IDF', 'Llama 3.2', 'Tesseract', 'NLP'], used: 'Used in ResuMatch, AgentX' },
-  { h: 'CS Fundamentals', items: ['Data Structures', 'Algorithms', 'OOP', 'DBMS'], used: 'Used in coursework, SIH' },
+  { h: 'AI', items: ['SBERT', 'scikit-learn', 'Llama 3.2', 'LLM APIs', 'NLP'], used: 'Used in ResuMatch, AgentX, SolarGrid AI' },
+  { h: 'Scientific / Geo', items: ['pandapower', 'CesiumJS', 'MapLibre', 'NetCDF'], used: 'Used in SolarGrid AI' },
   { h: 'Mobile', items: ['Flutter', 'Kotlin'], used: 'Used in FlowLink Android' },
-  { h: 'Design & Tools', items: ['Figma', 'Git', 'Frappe', 'ERPNext', 'Vercel', 'Render'], used: 'Used in internship, shipping' },
+  { h: 'Security & Tools', items: ['NIST 800-88', 'Git', 'Vercel', 'Render'], used: 'Used in hardening builds, shipping' },
 ]
 
-const WAVE_WORDS = ['Databases', 'Figma', 'UI/UX', 'Responsive Design', 'Git', 'GitHub', 'Vercel', 'Render', 'Python', 'React', 'Flask', 'AI Agents']
+const WAVE_WORDS = ['SolarGrid AI', 'MiraiSync', 'ResuMatch', 'FlowLink', 'AI Agents', 'Power-flow', 'Realtime Sync', 'GitHub', 'Vercel', 'Render', 'Python', 'React']
 
 /* ── Rainbow thread canvas (how his works: layered sine strokes + glow) ── */
 function ThreadCanvas() {
@@ -27,12 +27,12 @@ function ThreadCanvas() {
     let running = true
 
     const threads = [
-      { color: '#c8ff2e', amp: 26, freq: 0.006, speed: 0.9, width: 2.2, glow: 14 },
-      { color: '#ff9e2c', amp: 30, freq: 0.005, speed: -0.7, width: 2, glow: 12 },
-      { color: '#4dd8ff', amp: 22, freq: 0.008, speed: 1.1, width: 2, glow: 12 },
-      { color: '#ff5fa2', amp: 32, freq: 0.004, speed: 0.6, width: 1.8, glow: 12 },
-      { color: '#ffffff', amp: 18, freq: 0.01, speed: -1.2, width: 1.4, glow: 8 },
-      { color: '#9d7bff', amp: 28, freq: 0.0055, speed: 0.8, width: 1.6, glow: 10 },
+      { color: '#c8ff2e', amp: 26, freq: 0.006, speed: 0.45, width: 2.2, glow: 14 },
+      { color: '#ff9e2c', amp: 30, freq: 0.005, speed: -0.35, width: 2, glow: 12 },
+      { color: '#4dd8ff', amp: 22, freq: 0.008, speed: 0.55, width: 2, glow: 12 },
+      { color: '#ff5fa2', amp: 32, freq: 0.004, speed: 0.3, width: 1.8, glow: 12 },
+      { color: '#ffffff', amp: 18, freq: 0.01, speed: -0.6, width: 1.4, glow: 8 },
+      { color: '#9d7bff', amp: 28, freq: 0.0055, speed: 0.4, width: 1.6, glow: 10 },
     ]
 
     const resize = () => {
@@ -97,10 +97,10 @@ function ThreadCanvas() {
 }
 
 const proof = [
-  { v: 6, label: 'Builds shipped · 5 live' },
-  { v: 12, label: 'Verified credentials' },
-  { v: 1, label: 'Q1 journal paper (IF 6.2)' },
-  { v: 11, label: 'Milestones and counting' },
+  { v: 7, label: 'Working R&D builds' },
+  { v: 6, label: 'Live demos' },
+  { v: 34, label: 'Tools & frameworks' },
+  { v: 5, label: 'Story milestones' },
 ]
 
 function ProofNum({ v }) {
@@ -129,14 +129,14 @@ export default function SkillMatrix() {
   return (
     <section id="skills" ref={ref} style={{ padding: '6rem 0 4rem' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem' }}>
-        <p className="kicker">Skills</p>
+        <p className="kicker">Capabilities</p>
         <motion.h2
           className="h-giant"
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.75 }}
         >
-          Skills, <span className="it">with receipts.</span>
+          Technology, <span className="it">with receipts.</span>
         </motion.h2>
       </div>
 

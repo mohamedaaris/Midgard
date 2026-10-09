@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import { RESUME_URL } from './Navbar'
 
 const rise = {
   hidden: { opacity: 0, y: 50 },
@@ -15,6 +14,7 @@ export default function CoreIdentity() {
   const fade = useTransform(scrollYProgress, [0, 0.7], [1, 0])
 
   const goWork = () => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
+  const goLive = () => window.open('https://sih26-1-urz4.onrender.com/', '_blank', 'noopener')
 
   return (
     <header className="hero" id="home" ref={ref}>
@@ -23,22 +23,22 @@ export default function CoreIdentity() {
 
       <motion.div style={{ y: yText, opacity: fade }}>
         <motion.p className="kicker" variants={rise} initial="hidden" animate="show" custom={0.1}>
-          Full-stack developer
+          College-collaboration startup
         </motion.p>
         <motion.h1 className="hero-name" variants={rise} initial="hidden" animate="show" custom={0.2}>
-          P Mohamed<br />Aaris<span className="dot">.</span>
+          Midgard<span className="dot">.</span>
         </motion.h1>
         <motion.p className="hero-pitch" variants={rise} initial="hidden" animate="show" custom={0.35}>
-          I build real products at the point where <span className="it">code, design</span> and <span className="it">interaction</span> meet.
+          Engineering <span className="it">intelligent systems</span> for real-world problems — AI-powered software, automation and <span className="it">decision systems</span> that work.
         </motion.p>
         <motion.div className="hero-ctas" variants={rise} initial="hidden" animate="show" custom={0.5}>
-          <button className="btn btn-solid" onClick={goWork}>View work</button>
-          <a className="btn btn-ghost" href={RESUME_URL} target="_blank" rel="noopener noreferrer">Résumé</a>
+          <button className="btn btn-solid" onClick={goWork}>Explore our work</button>
+          <button className="btn btn-ghost" onClick={goLive}>See SolarGrid AI live</button>
         </motion.div>
         <motion.div className="hero-meta" variants={rise} initial="hidden" animate="show" custom={0.65}>
-          <span><b>BASED</b> · Chennai, India</span>
-          <span><b>STUDY</b> · CSE, REC '28</span>
-          <span><b>SHIPPED</b> · 6 builds, 5 live</span>
+          <span><b>FOCUS</b> · AI + Software Systems</span>
+          <span><b>MODEL</b> · R&amp;D + Custom Builds</span>
+          <span><b>STAGE</b> · Early-stage Startup</span>
         </motion.div>
       </motion.div>
 
@@ -50,7 +50,7 @@ export default function CoreIdentity() {
         transition={{ delay: 0.4, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="hero-photo-wrap">
-          <img src="/assets/aaris.jpeg" alt="P Mohamed Aaris" />
+          <img src="/assets/aaris.jpeg" alt="Mohamed Aaris P, Founder of Midgard" />
         </div>
         <motion.div
           className="orb orb-lime" style={{ width: 150, height: 150, top: '-4%', right: '2%' }}

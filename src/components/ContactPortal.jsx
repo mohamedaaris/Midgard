@@ -1,21 +1,21 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from './Navbar'
+import { GITHUB_URL, LINKEDIN_URL } from './Navbar'
 
 const WEB3FORMS_KEY = 'ae1493e1-92ed-4079-9832-12e41c47791a'
-const EMAIL = 'mohamedaaris019@gmail.com'
+const EMAIL = 'mohamedaaris.p.2024.cse@rajalakshmi.edu.in'
 
 export default function ContactPortal() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-  const [form, setForm] = useState({ name: '', email: '', reason: 'Just saying hi', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', reason: 'Project collaboration', message: '' })
   const [sending, setSending] = useState(false)
   const [status, setStatus] = useState(null)
   const [li, setLi] = useState(8) // K (last letter)
   const [paused, setPaused] = useState(false)
   const [dims, setDims] = useState({ w: 63, h: 74 })
 
-  const LINE = "LET'S TALK"
+  const LINE = "LET'S BUILD"
   const LETTERS = LINE.split('').map((ch, i) => ({ ch, i })).filter(o => o.ch !== ' ')
 
   // Auto-run the selector across every letter; hold it while hovering one
@@ -43,17 +43,17 @@ export default function ContactPortal() {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          name: form.name, email: form.email, message: `[${form.reason}] ${form.message}`,
-          subject: `Portfolio inquiry from ${form.name}`,
-          from_name: 'Portfolio contact form',
-        }),
-      })
+          body: JSON.stringify({
+            access_key: WEB3FORMS_KEY,
+            name: form.name, email: form.email, message: `[${form.reason}] ${form.message}`,
+            subject: `Midgard inquiry from ${form.name}`,
+            from_name: 'Midgard contact form',
+          }),
+        })
       const out = await res.json()
       if (out.success) {
         setStatus('ok')
-        setForm({ name: '', email: '', reason: 'Just saying hi', message: '' })
+        setForm({ name: '', email: '', reason: 'Project collaboration', message: '' })
       } else setStatus('err')
     } catch {
       setStatus('err')
@@ -65,7 +65,7 @@ export default function ContactPortal() {
 
   return (
     <section className="section" id="contact" ref={ref}>
-      <p className="kicker">Stay in touch</p>
+      <p className="kicker">Contact &amp; collaboration</p>
       <div className="contact-grid">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -97,14 +97,13 @@ export default function ContactPortal() {
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </p>
           <div className="contact-btns">
-            <a className="btn btn-solid" href={`mailto:${EMAIL}`}>Email me</a>
+            <a className="btn btn-solid" href={`mailto:${EMAIL}`}>Email the founder</a>
             <a className="btn btn-ghost" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a className="btn btn-ghost" href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a className="btn btn-ghost" href={RESUME_URL} target="_blank" rel="noopener noreferrer">Résumé</a>
           </div>
           <p className="section-desc" style={{ marginTop: '1.6rem' }}>
-            Open to internships, collaborations and interesting technical conversations.
-            I usually reply within 24–48 hours.
+            Open to pilot builds, project collaboration and technical conversations.
+            We usually reply within 24–48 hours.
           </p>
         </motion.div>
 
@@ -121,13 +120,14 @@ export default function ContactPortal() {
           <input id="c-email" type="email" value={form.email} onChange={set('email')} placeholder="you@company.com" required />
           <label htmlFor="c-reason">I'm here for</label>
           <select id="c-reason" value={form.reason} onChange={set('reason')}>
-            <option>Just saying hi</option>
-            <option>Internship opportunity</option>
             <option>Project collaboration</option>
-            <option>Interview / screening</option>
+            <option>Custom build</option>
+            <option>AI / automation consulting</option>
+            <option>MVP / prototype</option>
+            <option>Just saying hi</option>
           </select>
           <label htmlFor="c-msg">Message</label>
-          <textarea id="c-msg" value={form.message} onChange={set('message')} placeholder="Tell me about the role or idea…" required />
+          <textarea id="c-msg" value={form.message} onChange={set('message')} placeholder="What problem are you trying to solve?" required />
           <button className="btn btn-solid" type="submit" disabled={sending} style={{ marginTop: '1.2rem', width: '100%', justifyContent: 'center' }}>
             {sending ? 'Sending…' : status === 'ok' ? '✓ Sent' : 'Send'}
           </button>

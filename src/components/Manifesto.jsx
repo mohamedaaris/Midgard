@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 
-const CYCLE = ['CODE', 'DESIGN', 'INTERACTION']
+const CYCLE = ['SYSTEMS', 'INTELLIGENCE', 'IMPACT']
 
 function CycleWord() {
   const [i, setI] = useState(0)
@@ -44,8 +44,8 @@ function LitWord({ children, progress, range, accent }) {
 function ScrollStatement() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.85', 'end 0.45'] })
-  const words = 'Ideas are easy. I would rather show you something that runs, loads fast and gets used.'.split(' ')
-  const accent = new Set(['runs,', 'loads'])
+  const words = 'Midgard turns messy real-world problems into working systems — from data to decision to action.'.split(' ')
+  const accent = new Set(['working', 'decision'])
   return (
     <p ref={ref} className="stmt">
       {words.map((w, i) => (
@@ -63,7 +63,7 @@ function ScrollStatement() {
 }
 
 const ICONS_A = ['React', 'Next.js', 'JavaScript', 'Python', 'Flask', 'Tailwind', 'Framer Motion', 'Socket.IO', 'MySQL', 'Git']
-const ICONS_B = ['WebRTC', 'Frappe', 'ERPNext', 'SBERT', 'Llama 3.2', 'Tesseract', 'Node.js', 'Kotlin', 'Flutter', 'Supabase']
+const ICONS_B = ['WebRTC', 'SBERT', 'Llama 3.2', 'scikit-learn', 'pandapower', 'CesiumJS', 'Node.js', 'Kotlin', 'Flutter', 'Supabase']
 
 function IconMarquee({ items, reverse }) {
   const row = [...items, ...items]
